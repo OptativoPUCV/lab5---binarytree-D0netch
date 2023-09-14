@@ -1,0 +1,30 @@
+Thu 14 Sep 2023 07:21:38 PM UTC: 
+ treemap.c | 8 ++++++--
+ 1 file changed, 6 insertions(+), 2 deletions(-)
+In file included from test.c:4:
+treemap.c: In function ‘createTreeMap’:
+treemap.c:43:5: error: two or more data types in declaration specifiers
+   43 |     void* auxkey1 = &key1;
+      |     ^~~~
+treemap.c:43:22: error: ‘key1’ undeclared (first use in this function)
+   43 |     void* auxkey1 = &key1;
+      |                      ^~~~
+treemap.c:43:22: note: each undeclared identifier is reported only once for each function it appears in
+treemap.c:44:24: error: ‘key2’ undeclared (first use in this function)
+   44 |     if (is_equal(key1, key2) != 0)
+      |                        ^~~~
+treemap.c:44:9: error: too few arguments to function ‘is_equal’
+   44 |     if (is_equal(key1, key2) != 0)
+      |         ^~~~~~~~
+treemap.c:22:5: note: declared here
+   22 | int is_equal(TreeMap* tree, void* key1, void* key2){
+      |     ^~~~~~~~
+treemap.c:43:11: error: unused variable ‘auxkey1’ [-Werror=unused-variable]
+   43 |     void* auxkey1 = &key1;
+      |           ^~~~~~~
+treemap.c:47:1: error: control reaches end of non-void function [-Werror=return-type]
+   47 | }
+      | ^
+cc1: all warnings being treated as errors
+Compilation failed
+d08d20d
