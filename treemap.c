@@ -40,8 +40,8 @@ TreeMap * createTreeMap(int (*lower_than) (void* key1, void* key2)) {
     TreeMap * newMap = (TreeMap *)malloc(sizeof(TreeMap));
     if (newMap == NULL) return NULL;
     newMap->lower_than = lower_than;
-    int resultado = newMap->lower_than(&key1, &key2);
-    //newMap->lower_than = lower_than;
+    newMap->root=NULL;
+    newMap->current = NULL;
     return NULL;
 }
 

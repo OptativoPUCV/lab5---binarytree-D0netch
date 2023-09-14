@@ -46,3 +46,9 @@ treemap.c:43:9: error: unused variable ‘resultado’ [-Werror=unused-variable]
 cc1: all warnings being treated as errors
 Compilation failed
 f078c5d
+Thu 14 Sep 2023 07:33:30 PM UTC: 
+ treemap.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+ tests:  1|8
+total_score: 0/70
+6b5d89f
