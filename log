@@ -98,3 +98,17 @@ Thu 14 Sep 2023 08:21:28 PM UTC:
  tests:  11|6
 total_score: 15/70
 24b0718
+Thu 14 Sep 2023 08:23:05 PM UTC: 
+ treemap.c | 3 +++
+ 1 file changed, 3 insertions(+)
+In file included from test.c:4:
+treemap.c: In function ‘insertTreeMap’:
+treemap.c:52:10: error: ‘return’ with a value, in function returning void [-Werror=return-type]
+   52 |   return NULL;
+      |          ^~~~
+treemap.c:49:6: note: declared here
+   49 | void insertTreeMap(TreeMap * tree, void* key, void * value) {
+      |      ^~~~~~~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+a0b428f
