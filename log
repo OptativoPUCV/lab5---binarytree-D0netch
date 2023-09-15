@@ -196,3 +196,25 @@ Fri 15 Sep 2023 07:03:47 PM UTC:
  tests:  25|1
 total_score: 60/70
 01fb8b4
+Fri 15 Sep 2023 07:11:09 PM UTC: 
+ treemap.c | 26 +++++++++++++++++++++++++-
+ 1 file changed, 25 insertions(+), 1 deletion(-)
+In file included from test.c:4:
+treemap.c: In function ‘upperBound’:
+treemap.c:187:5: error: expected ‘;’ before ‘}’ token
+  187 |     }
+      |     ^
+treemap.c:200:13: error: ‘ub_node’ undeclared (first use in this function); did you mean ‘ub_nod’?
+  200 |             ub_node = current;
+      |             ^~~~~~~
+      |             ub_nod
+treemap.c:200:13: note: each undeclared identifier is reported only once for each function it appears in
+treemap.c:210:1: error: expected ‘;’ before ‘}’ token
+  210 | }
+      | ^
+treemap.c:190:15: error: unused variable ‘ub_nod’ [-Werror=unused-variable]
+  190 |     TreeNode* ub_nod = NULL;
+      |               ^~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+f9893aa
