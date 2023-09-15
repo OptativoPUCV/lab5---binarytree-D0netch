@@ -180,7 +180,6 @@ Pair * searchTreeMap(TreeMap * tree, void* key) {
     return NULL;
 }
 
-
 Pair* upperBound(TreeMap* tree, void* key) {
     if (tree->root == NULL) {
         return NULL;  // El árbol está vacío
@@ -194,7 +193,9 @@ Pair* upperBound(TreeMap* tree, void* key) {
 
         if (cmp >= 0) {
             // La clave actual es mayor o igual a la clave buscada
-            ub_node = current;
+            if (ub_node == NULL || tree->lower_than(current->pair->key, ub_node->pair->key) >= 0) {
+                ub_node = current;
+            }
             current = current->left;  // Buscamos hacia la izquierda para el menor upper bound
         } else {
             // La clave actual es menor que la clave buscada
