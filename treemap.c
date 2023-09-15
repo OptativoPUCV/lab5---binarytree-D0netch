@@ -183,7 +183,7 @@ Pair * searchTreeMap(TreeMap * tree, void* key) {
 
 Pair* upperBound(TreeMap* tree, void* key) {
     if (tree->root == NULL) {
-        return NULL;
+        return NULL;  // El árbol está vacío
     }
 
     TreeNode* current = tree->root;
@@ -192,22 +192,22 @@ Pair* upperBound(TreeMap* tree, void* key) {
     while (current != NULL) {
         int cmp = tree->lower_than(current->pair->key, key);
 
-        if (cmp == 0) {
+        if (cmp >= 0) {
+            // La clave actual es mayor o igual a la clave buscada
             ub_node = current;
-            current = current->right;
-        } else if (cmp < 0) {
-            current = current->right;
+            current = current->left;  // Buscamos hacia la izquierda para el menor upper bound
         } else {
-            ub_node = current;
-            current = current->left;
+            // La clave actual es menor que la clave buscada
+            current = current->right;
         }
     }
 
+    // Si encontramos un upper bound, devolvemos su par
     if (ub_node != NULL) {
         return ub_node->pair;
     }
 
-    return NULL; 
+    return NULL;  // No hay un upper bound
 }
 
 Pair * firstTreeMap(TreeMap * tree) {
