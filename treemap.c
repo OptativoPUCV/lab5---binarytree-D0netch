@@ -194,7 +194,7 @@ Pair* upperBound(TreeMap* tree, void* key) {
 
         if (cmp == 0) {
             return current->pair;
-        } else if (cmp < 1) {
+        } else if (cmp < 0) {
             current = current->right;
         } else {
             ub_node = current;
