@@ -207,7 +207,10 @@ Pair * nextTreeMap(TreeMap * tree) {
         }
         successor = parent;
     }
-    return successor->pair;
+    if (successor != NULL) {
+        tree->current = successor;
+        return successor->pair;
+    }
   }
   return NULL;
 }
