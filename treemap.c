@@ -193,7 +193,7 @@ Pair* upperBound(TreeMap* tree, void* key) {
 
         if (cmp >= 0) {
             // La clave actual es mayor o igual a la clave buscada
-            if (ub_node == NULL || tree->lower_than(current->pair->key, ub_node->pair->key) >= 0) {
+            if (ub_node == NULL || tree->lower_than(current->pair->key, ub_node->pair->key) < 0) {
                 ub_node = current;
             }
             current = current->left;  // Buscamos hacia la izquierda para el menor upper bound
